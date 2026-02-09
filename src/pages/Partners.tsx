@@ -31,7 +31,11 @@ const Partners = () => (
         <p className="mt-4 text-lg text-primary-foreground/80 max-w-2xl mx-auto">
           Публикуйте ваших AI-агентов на Neurosite и получайте доступ к тысячам бизнес-клиентов
         </p>
-        <Button size="lg" className="mt-8 gradient-primary text-primary-foreground border-0 px-8">
+        <Button
+          size="lg"
+          variant="outline"
+          className="mt-8 border-primary-foreground/30 bg-transparent px-8 text-primary-foreground hover:bg-primary-foreground/10"
+        >
           Стать партнером <ArrowRight className="ml-2 h-4 w-4" />
         </Button>
       </div>
