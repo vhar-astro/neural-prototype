@@ -1,0 +1,46 @@
+name: Deploy to Cloud Run
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - opened
+      - synchronize
+      - labeled
+      - closed
+
+env:
+  PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+  SERVICE: neural-prototype
+  REGION: us-central1
+
+jobs:
+  deploy:
+    # Trigger if PR is open/sync/labeled with 'release' OR if PR is merged with 'release'
+    if: |
+      (github.event.action != 'closed' && contains(github.event.pull_request.labels.*.name, 'release')) ||
+      (github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'release'))
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Google Auth
+        uses: 'google-github-actions/auth@v2'
+        with:
+          credentials_json: '${{ secrets.GCP_SA_KEY }}'
+
+      - name: 'Set up Cloud SDK'
+        uses: 'google-github-actions/setup-gcloud@v2'
+
+      - name: 'Deploy to Cloud Run'
+        run: |
+          gcloud run deploy ${{ env.SERVICE }} 
+            --source . 
+            --region ${{ env.REGION }} 
+            --allow-unauthenticated 
+            --min-instances 0 
+            --max-instances 1 
+            --port 80 
+            --quiet
