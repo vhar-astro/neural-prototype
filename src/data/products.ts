@@ -89,7 +89,8 @@ export const products: Product[] = [
     integrations: ["WordPress", "Telegram", "MailChimp", "Canva API"],
     dataSecurity: "Данные не используются для обучения, полное удаление по запросу",
     developer: "AI Content Lab",
-    icon: "✍️"
+    icon: "✍️",
+    videoUrl: "https://www.youtube.com/embed/84g_QKQEY2A"
   },
   {
     id: "4",
