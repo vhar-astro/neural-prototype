@@ -17,6 +17,7 @@ export interface Product {
   dataSecurity: string;
   developer: string;
   icon: string;
+  videoUrl?: string;
 }
 
 export const products: Product[] = [
@@ -64,7 +65,8 @@ export const products: Product[] = [
     integrations: ["AmoCRM", "HubSpot", "Google Analytics", "Яндекс.Метрика"],
     dataSecurity: "GDPR-совместимость, логирование действий, двухфакторная аутентификация",
     developer: "SalesBot Inc.",
-    icon: "📈"
+    icon: "📈",
+    videoUrl: "https://www.youtube.com/embed/jeSmbtohYuk"
   },
   {
     id: "3",
@@ -87,7 +89,8 @@ export const products: Product[] = [
     integrations: ["WordPress", "Telegram", "MailChimp", "Canva API"],
     dataSecurity: "Данные не используются для обучения, полное удаление по запросу",
     developer: "AI Content Lab",
-    icon: "✍️"
+    icon: "✍️",
+    videoUrl: "https://www.youtube.com/embed/84g_QKQEY2A"
   },
   {
     id: "4",
