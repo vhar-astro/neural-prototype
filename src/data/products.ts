@@ -67,7 +67,7 @@ export const products: Product[] = [
     dataSecurity: "Данные не используются для обучения, полное удаление по запросу",
     developer: "AI Content Lab",
     icon: "",
-    videoUrl: "https://www.youtube.com/embed/jeSmbtohYuk"
+    videoUrl: "https://www.youtube.com/embed/84g_QKQEY2A"
   }
 ];
 
