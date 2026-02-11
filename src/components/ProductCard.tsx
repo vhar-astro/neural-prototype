@@ -12,7 +12,7 @@ const ProductCard = ({ product }: { product: Product }) => {
   return (
     <div className="group rounded-xl border border-border bg-card p-5 shadow-card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1">
       <div className="mb-3 flex items-start justify-between">
-        <span className="text-4xl">{product.icon}</span>
+        {product.icon && <span className="text-4xl">{product.icon}</span>}
         <Badge variant="secondary" className="text-xs">
           {product.paymentModel}
         </Badge>

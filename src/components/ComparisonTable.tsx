@@ -38,7 +38,7 @@ const ComparisonTable = () => {
             {comparisonItems.map(item => (
               <th key={item.id} className="p-3 text-left">
                 <div className="flex items-center gap-2">
-                  <span className="text-2xl">{item.icon}</span>
+                  {item.icon && <span className="text-2xl">{item.icon}</span>}
                   <span className="text-sm font-semibold">{item.name}</span>
                   <button onClick={() => removeFromComparison(item.id)} className="ml-auto text-muted-foreground hover:text-destructive">
                     <X className="h-4 w-4" />
