@@ -38,7 +38,7 @@ const ProductDetail = () => {
           <div className="lg:col-span-2 space-y-6">
             <div className="rounded-xl border border-border bg-card p-6">
               <div className="flex items-start gap-4">
-                <span className="text-6xl">{product.icon}</span>
+                {product.icon && <span className="text-6xl">{product.icon}</span>}
                 <div>
                   <h1 className="text-2xl font-bold">{product.name}</h1>
                   <div className="mt-1 flex items-center gap-2">
