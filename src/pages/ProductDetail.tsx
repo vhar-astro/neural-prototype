@@ -51,6 +51,21 @@ const ProductDetail = () => {
               </div>
             </div>
 
+            {product.videoUrl && (
+              <div className="rounded-xl border border-border bg-card p-6">
+                <h2 className="mb-4 text-lg font-semibold">Видео-демонстрация</h2>
+                <div className="aspect-video overflow-hidden rounded-lg">
+                  <iframe
+                    className="h-full w-full"
+                    src={product.videoUrl}
+                    title={`${product.name} Video Demo`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </div>
+            )}
+
             {/* Features */}
             <div className="rounded-xl border border-border bg-card p-6">
               <h2 className="mb-4 text-lg font-semibold">Функции</h2>

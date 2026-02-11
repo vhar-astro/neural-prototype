@@ -17,6 +17,7 @@ export interface Product {
   dataSecurity: string;
   developer: string;
   icon: string;
+  videoUrl?: string;
 }
 
 export const products: Product[] = [
@@ -64,7 +65,8 @@ export const products: Product[] = [
     integrations: ["AmoCRM", "HubSpot", "Google Analytics", "Яндекс.Метрика"],
     dataSecurity: "GDPR-совместимость, логирование действий, двухфакторная аутентификация",
     developer: "SalesBot Inc.",
-    icon: "📈"
+    icon: "📈",
+    videoUrl: "https://www.youtube.com/embed/jeSmbtohYuk"
   },
   {
     id: "3",
